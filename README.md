@@ -36,6 +36,8 @@ PPR: if you have it installed, then your curry definitions can include POD
 syntax anywhere whitespace can occur between `curry` and `{`.  Without PPR,
 that will trigger a syntax error.
 
+If your Perl is older than 5.16, you'll also need Sub::Current.
+
 # USAGE
 
 Define a curried subroutine using the `curry` keyword.  You should list the

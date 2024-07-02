@@ -36,6 +36,8 @@ PPR: if you have it installed, then your curry definitions can include POD
 syntax anywhere whitespace can occur between C<curry> and C<{>.  Without PPR,
 that will trigger a syntax error.
 
+If your Perl is older than 5.16, you'll also need Sub::Current.
+
 =head1 USAGE
 
 Define a curried subroutine using the C<curry> keyword.  You should list the
@@ -155,7 +157,6 @@ package Sub::Curried;
 use parent 'Sub::Composable';
 
 use Sub::Name;
-use Sub::Current;
 use Keyword::Pluggable 1.05;
 use Attribute::Handlers;
 
@@ -172,6 +173,16 @@ sub unimport {
 sub UNIVERSAL::Sub__Curried :ATTR(CODE) {
     my ($package, $symbol, $ref, $attr, $arg) = @_;
     bless($ref, __PACKAGE__);
+}
+
+my $current_sub;
+BEGIN {
+    if ($^V lt v5.16.0) {
+        require Sub::Current;
+        $current_sub = 'Sub::Current::ROUTINE';
+    } else {
+        $current_sub = 'CORE::__SUB__';
+    }
 }
 
 # PPR is the easiest way to parse POD.  But POD between "curry" and "{" was
@@ -230,7 +241,7 @@ sub injection {
                  ? () # We never need to return a closure
                  : (
                  ' if (@_ < ', scalar(@params), ') {',
-                   ' my $func = Sub::Current::ROUTINE;',
+                   ' my $func = ', $current_sub, ';',
                    ' my $args = \@_;',
                    ' return ',
                       $name_wrapper[0],
