@@ -35,6 +35,8 @@ sub applyto {
 
 use overload '<<' => \&compose,
              '>>' => \&backcompose,
-             '|'  => \&applyto;
+             '|'  => \&applyto,
+             # fallback is needed to avoid an error from Attribute::Handlers
+             'fallback' => 1;
 
 1;

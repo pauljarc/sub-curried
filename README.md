@@ -29,6 +29,13 @@ plugging in "holes" in arguments at arbitrary positions.  Currying is more
 specifically the application of arguments progressively from left to right
 until you have enough of them.
 
+# DEPENDENCIES
+
+Beyond those listed in META.yml/META.json, there is an optional dependency on
+PPR: if you have it installed, then your curry definitions can include POD
+syntax anywhere whitespace can occur between `curry` and `{`.  Without PPR,
+that will trigger a syntax error.
+
 # USAGE
 
 Define a curried subroutine using the `curry` keyword.  You should list the
@@ -142,14 +149,11 @@ frames.
 
 # BUGS
 
-No major bugs currently open.  Please report any bugs via RT or email, or ping
-me on IRC (osfameron on irc.perl.org and freenode)
+No major bugs currently open.  Please report any bugs via RT or email.
 
 # SEE ALSO
 
-[Devel::Declare](https://metacpan.org/pod/Devel%3A%3ADeclare) provides the magic (yes, there's a teeny bit of code
-generation involved, but it's not a global filter, rather a localised
-parsing hack).
+[Keyword::Pluggable](https://metacpan.org/pod/Keyword%3A%3APluggable) provides the syntactic magic.
 
 There are several modules on CPAN that already do currying or partial evaluation:
 
@@ -165,11 +169,11 @@ to declare how many arguments it's expecting)
 # AUTHOR
 
     (c)2008-2013 osfameron@cpan.org
+    (c)2024 Paul Jarc <purge@cpan.org>
 
 # CONTRIBUTORS
 
 - Florian (rafl) Ragwitz
-- Paul (prj) Jarc
 
 # LICENSE
 
@@ -177,6 +181,6 @@ This module is distributed under the same terms and conditions as Perl itself.
 
 # CONTRIBUTING
 
-Please submit bugs to RT or shout at me on IRC (osfameron on #london.pm on irc.perl.org)
+Please submit bugs to RT or email.
 
-A git repo is available at [http://github.com/osfameron/Sub--Curried/tree/master](http://github.com/osfameron/Sub--Curried/tree/master)
+A git repo is available at [https://github.com/pauljarc/Sub--Curried](https://github.com/pauljarc/Sub--Curried)
