@@ -1,5 +1,6 @@
 use strict; use warnings;
 package Sub::Composable;
+
 use Sub::Name;
 
 # use Sub::Compose qw( chain ); # doesn't fucking work, due to scalar/list context shenanigans

@@ -142,9 +142,10 @@ frames.
 
 =cut
 
-package Sub::Curried;
-use base 'Sub::Composable';
 use strict; use warnings;
+package Sub::Curried;
+
+use parent 'Sub::Composable';
 use Carp 'croak';
 
 use Devel::Declare;
@@ -152,8 +153,6 @@ use Sub::Name;
 use Sub::Identify 'sub_fullname';
 use B::Hooks::EndOfScope;
 use Devel::BeginLift;
-
-our $VERSION = '0.12';
 
 # cargo culted
 sub import {
