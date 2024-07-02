@@ -57,7 +57,7 @@ as it goes until all the arguments are ready, at which point the sub returns its
     three(1)      # a new subroutine, with $one bound to the number 1
         ->(2,3)   # call the new sub with these arguments
 
-    three(1)->(2)->(3) # You could call the curried sub like this, 
+    three(1)->(2)->(3) # You could call the curried sub like this,
                        # instead of commas (1,2,3)
 
 What about calling with _no_ arguments?  By extension that would return a function exactly
@@ -97,7 +97,7 @@ Finally, we can create a shell-like pipeline:
 
     say 'Bella' | prepend('Ciao ') | append('!'); # Ciao Bella!
 
-The overloaded syntax is provided by `Sub::Composable` which is distributed with 
+The overloaded syntax is provided by `Sub::Composable` which is distributed with
 this module as a base class.
 
 ## Argument aliasing
@@ -162,16 +162,20 @@ bound keys are).
 - [Attribute::Curried](https://metacpan.org/pod/Attribute%3A%3ACurried) - exactly what we want minus the sugar.  (The attribute has
 to declare how many arguments it's expecting)
 
-# AUTHOR and LICENSE
+# AUTHOR
 
     (c)2008-2013 osfameron@cpan.org
 
-## CONTRIBUTORS
+# CONTRIBUTORS
 
 - Florian (rafl) Ragwitz
 - Paul (prj) Jarc
 
+# LICENSE
+
 This module is distributed under the same terms and conditions as Perl itself.
+
+# CONTRIBUTING
 
 Please submit bugs to RT or shout at me on IRC (osfameron on #london.pm on irc.perl.org)
 

@@ -57,7 +57,7 @@ as it goes until all the arguments are ready, at which point the sub returns its
     three(1)      # a new subroutine, with $one bound to the number 1
         ->(2,3)   # call the new sub with these arguments
 
-    three(1)->(2)->(3) # You could call the curried sub like this, 
+    three(1)->(2)->(3) # You could call the curried sub like this,
                        # instead of commas (1,2,3)
 
 What about calling with I<no> arguments?  By extension that would return a function exactly
@@ -97,7 +97,7 @@ Finally, we can create a shell-like pipeline:
 
     say 'Bella' | prepend('Ciao ') | append('!'); # Ciao Bella!
 
-The overloaded syntax is provided by C<Sub::Composable> which is distributed with 
+The overloaded syntax is provided by C<Sub::Composable> which is distributed with
 this module as a base class.
 
 =head2 Argument aliasing
@@ -341,7 +341,7 @@ There are several modules on CPAN that already do currying or partial evaluation
 
 L<Perl6::Currying> - Filter based module prototyping the Perl 6 system
 
-=item * 
+=item *
 
 L<Sub::Curry> - seems rather complex, with concepts like blackholes and antispices.  Odd.
 
@@ -362,11 +362,11 @@ to declare how many arguments it's expecting)
 
 =back
 
-=head1 AUTHOR and LICENSE
+=head1 AUTHOR
 
  (c)2008-2013 osfameron@cpan.org
 
-=head2 CONTRIBUTORS
+=head1 CONTRIBUTORS
 
 =over 4
 
@@ -380,7 +380,11 @@ Paul (prj) Jarc
 
 =back
 
+=head1 LICENSE
+
 This module is distributed under the same terms and conditions as Perl itself.
+
+=head1 CONTRIBUTING
 
 Please submit bugs to RT or shout at me on IRC (osfameron on #london.pm on irc.perl.org)
 
